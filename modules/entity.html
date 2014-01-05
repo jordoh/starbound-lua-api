@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Starbound Lua API</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Starbound</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><strong>entity</strong></li>
+  <li><a href="../modules/monsterHooks.html">monsterHooks</a></li>
+  <li><a href="../modules/npcHooks.html">npcHooks</a></li>
+  <li><a href="../modules/objectHooks.html">objectHooks</a></li>
+  <li><a href="../modules/world.html">world</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>entity</code></h1>
+
+<p>Stubs for entity.* callbacks defined in C++.</p>
+<p> DO NOT INCLUDE this file in your scripts, it is for documentation purposes only.</p>
+
+<p> Entity callbacks query and mutate the specific entity that is running the
+ lua script. They can be called from a <em>different</em> entity using
+ world.callScriptedEntity(targetEntityId, "entity.<em>"), replacing "</em>" with the
+ name of a function defined below.</p>
+
+<p> Specific types of entities (e.g. NPCs, Objects) define different sets of
+ entity.* functions - if a function is only defined for a specific entity
+ type, it will be indicated in the function's comment below.</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#id">id()</a></td>
+	<td class="summary">Gets a numeric id that can be used to identify this specific entity until
+ it is unloaded</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#position">position()</a></td>
+	<td class="summary">Gets the entity's current world position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#damageTeam">damageTeam()</a></td>
+	<td class="summary">Gets the entity's damage team</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#closestValidTarget">closestValidTarget(radius)</a></td>
+	<td class="summary">Gets the entity id of the closest valid target entity</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#isValidTarget">isValidTarget(entityId)</a></td>
+	<td class="summary">Determines whether the given entity is a valid target of this entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#distanceToEntity">distanceToEntity(entityId)</a></td>
+	<td class="summary">Gets the vector from this entity's position to the given entity's position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#entityInSight">entityInSight(entityId)</a></td>
+	<td class="summary">Determines if the given entity is in sight to this entity</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#type">type()</a></td>
+	<td class="summary">Gets the type of the entity as specified in the entity's config file.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#seed">seed()</a></td>
+	<td class="summary">Gets the seed used to generate the entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#setForceRegion">setForceRegion(region, force)</a></td>
+	<td class="summary">Allows the entity to apply a global force to all entities in a region.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+    <dl class="function">
+    <dt>
+    <a name = "id"></a>
+    <strong>id()</strong>
+    </dt>
+    <dd>
+    Gets a numeric id that can be used to identify this specific entity until
+ it is unloaded
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">entityId</span></span>
+        the id of the calling entity
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "position"></a>
+    <strong>position()</strong>
+    </dt>
+    <dd>
+    Gets the entity's current world position
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">vector</span></span>
+        world position of the entity
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "damageTeam"></a>
+    <strong>damageTeam()</strong>
+    </dt>
+    <dd>
+    Gets the entity's damage team  Damage teams control which other entities can be damaged by this entity.
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        map of <code>{ type = numeric, team = numeric }</code>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "closestValidTarget"></a>
+    <strong>closestValidTarget(radius)</strong>
+    </dt>
+    <dd>
+    Gets the entity id of the closest valid target entity  Note that "valid target entities" are defined as entities that can be
+ damaged (based on damage teams); and are players, NPCs, or aggressive
+ monsters.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">radius</span>
+            <span class="types"><span class="type">number</span></span>
+         Maximum distance a valid target can be from this entity's position
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">entityId</span></span>
+        id of the closest valid target entity
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><span class="type">entityId</span></span>
+        0 if no valid target entity is in the given radius
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "isValidTarget"></a>
+    <strong>isValidTarget(entityId)</strong>
+    </dt>
+    <dd>
+    Determines whether the given entity is a valid target of this entity. </p>
+
+<p> Note that "valid target entities" are defined as entities that can be
+ damaged (based on damage teams); and are players, NPCs, or aggressive
+ monsters
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         the id of the potential valid target entity
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        true if the given entity is a valid target, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "distanceToEntity"></a>
+    <strong>distanceToEntity(entityId)</strong>
+    </dt>
+    <dd>
+    Gets the vector from this entity's position to the given entity's position
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         entity to get a vector to
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        { x, y } vector from this entity to the given entity
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        { 0, 0 } if no entity exists with the given entity id
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "entityInSight"></a>
+    <strong>entityInSight(entityId)</strong>
+    </dt>
+    <dd>
+    Determines if the given entity is in sight to this entity  Note that "in sight" is defined as not having solid collision
+ intersecting the line between the entities' positions
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         the entity check for line of sight on
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        true if the entity is in sight, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "type"></a>
+    <strong>type()</strong>
+    </dt>
+    <dd>
+    Gets the type of the entity as specified in the entity's config file. </p>
+
+<p> Only available for monsters, where this is the "type" value from the
+ *.monstertype
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        type value
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "seed"></a>
+    <strong>seed()</strong>
+    </dt>
+    <dd>
+    Gets the seed used to generate the entity. </p>
+
+<p> Only available for monsters and npcs.
+ Note that entities can be spawned in custom ways that include additional
+ configuration options not described by this seed. E.g. by calling
+ world.spawnMonster and passing in configuration options, in which case
+ the seed alone will not be sufficient to reconstruct that monster.
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The unsigned 64-bit seed, encoded as a decimal string
+ (Lua's numeric type - double - is not large enough to hold all seed values).
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "setForceRegion"></a>
+    <strong>setForceRegion(region, force)</strong>
+    </dt>
+    <dd>
+    Allows the entity to apply a global force to all entities in a region. </p>
+
+<p> Only available to monsters and objects. Note that this force will be
+ applied until the next call to <code>main</code>, regardless of what scriptDelta is
+ set to for the calling entity. The force will be cleared if setForceRegion
+ is not called during main(). The force will be removed if the calling
+ entity is removed before the next call to <code>main</code>.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">region</span>
+            <span class="types"><span class="type">{ xMin, yMin, xMax, yMax }</span></span>
+         the region in which the force will be applied.
+        </li>
+        <li><span class="parameter">force</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         the force to apply to entities in the region.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        nil
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.0</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Starbound Lua API</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Starbound</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/entity.html">entity</a></li>
+  <li><a href="../modules/monsterHooks.html">monsterHooks</a></li>
+  <li><strong>npcHooks</strong></li>
+  <li><a href="../modules/objectHooks.html">objectHooks</a></li>
+  <li><a href="../modules/world.html">world</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>npcHooks</code></h1>
+
+<p>Stubs for global functions NPC scripts can define, which will be called by C++</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#init">init()</a></td>
+	<td class="summary">Called when the NPC is added to the world.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#main">main()</a></td>
+	<td class="summary">Update loop handler.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#die">die()</a></td>
+	<td class="summary">Called when the npc has died and is about to be removed.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#damage">damage(args)</a></td>
+	<td class="summary">Called after the NPC has taken damage.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#interact">interact(args)</a></td>
+	<td class="summary">Called when the NPC is interacted with.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+    <dl class="function">
+    <dt>
+    <a name = "init"></a>
+    <strong>init()</strong>
+    </dt>
+    <dd>
+    Called when the NPC is added to the world.
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "main"></a>
+    <strong>main()</strong>
+    </dt>
+    <dd>
+    Update loop handler.
+ Called once every <code>scriptDelta</code> (as defined in *.npctype) game ticks
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "die"></a>
+    <strong>die()</strong>
+    </dt>
+    <dd>
+    Called when the npc has died and is about to be removed.
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "damage"></a>
+    <strong>damage(args)</strong>
+    </dt>
+    <dd>
+    Called after the NPC has taken damage.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><span class="type">tab</span></span>
+         Map of info about the damage, structured as:</p>
+<pre><code>{
+  sourceId = &lt;entity id of entity that caused the damage&gt;,
+  damage = &lt;numeric amount of damage that was taken&gt;,
+  sourceDamage = &lt;numeric amount of damage that was originally dealt&gt;,
+  sourceKind = &lt;string kind of damage being applied, as defined in "damageKind" value in a *.projectile config&gt;
+}
+</code></pre>
+<p> Note that "sourceDamage" can be higher than "damage" if - for instance -
+ some damage was blocked by a shield.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "interact"></a>
+    <strong>interact(args)</strong>
+    </dt>
+    <dd>
+
+<p>Called when the NPC is interacted with.
+ Available interaction responses are:</p>
+<pre><code>"OpenCockpitInterface"
+"SitDown"
+"OpenCraftingInterface"
+"OpenCookingInterface"
+"OpenTechInterface"
+"Teleport"
+"OpenStreamingVideoInterface"
+"PlayCinematic"
+"OpenSongbookInterface"
+"OpenNpcInterface"
+"OpenNpcCraftingInterface"
+"OpenTech3DPrinterDialog"
+"ShowPopup"
+</code></pre>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><span class="type">tab</span></span>
+
+<p> Map of interaction event arguments:</p>
+<pre><code>{
+  sourceId = &lt;Entity id of the entity interacting with this NPC&gt;
+  sourcePosition = &lt;The {x,y} position of the interacting entity&gt;
+}
+</code></pre>
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        nil (no interaction response)
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        the interaction response that should be performed
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><span class="type">array</span></span>
+
+<p> the interaction response and configuration:</p>
+<pre><code>{
+   &lt;interaction response string&gt;,
+   &lt;interaction response config table (map)&gt;
+}
+</code></pre>
+
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.0</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
