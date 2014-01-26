@@ -58,160 +58,6 @@
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#entityQuery">entityQuery(center, radius[, options])</a></td>
-	<td class="summary">Finds all entities in the given region.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#monsterQuery">monsterQuery(center, radius, options)</a></td>
-	<td class="summary">Entity query that only considers monsters</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#npcQuery">npcQuery(center, radius, options)</a></td>
-	<td class="summary">Entity query that only considers npcs</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#objectQuery">objectQuery(center, radius, options)</a></td>
-	<td class="summary">Entity query that only considers placeable objects.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#itemDropQuery">itemDropQuery(center, radius, options)</a></td>
-	<td class="summary">Entity query that only considers item drops</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#playerQuery">playerQuery(center, radius, options)</a></td>
-	<td class="summary">Entity query that only considers players</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#loungableQuery">loungableQuery(center, radius, options)</a></td>
-	<td class="summary">Entity query that only loungable objects.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#entityLineQuery">entityLineQuery(min, max, options)</a></td>
-	<td class="summary">Entity query that only matches entities intersecting the given line.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#objectLineQuery">objectLineQuery(min, max, options)</a></td>
-	<td class="summary">Entity query that only matches objects intersecting the given line.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#npcLineQuery">npcLineQuery(min, max, options)</a></td>
-	<td class="summary">Entity query that only matches npcs intersecting the given line.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#entityExists">entityExists(entityId)</a></td>
-	<td class="summary">Determines if an entity still exists in the world.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#entityType">entityType(entityId)</a></td>
-	<td class="summary">Determines the general type of an entity.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#entityPosition">entityPosition(entityId)</a></td>
-	<td class="summary">Gets the world position of an entity.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#entityHealth">entityHealth(entityId)</a></td>
-	<td class="summary">Gets the current and maximum health of an entity.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#entitySpecies">entitySpecies(entityId)</a></td>
-	<td class="summary">Gets the species of the entity
- Only valid for entities that have a notion of humanoid species (npcs and players)</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#entityName">entityName(entityId)</a></td>
-	<td class="summary">Gets the name of the entity.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#entityHandItem">entityHandItem(entityId, hand)</a></td>
-	<td class="summary">Gets an item descriptor for the item held in the entity's hand
- Only valid for entities that can hold items (npcs, players)</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#callScriptedEntity">callScriptedEntity(entityId, name, ...)</a></td>
-	<td class="summary">Calls a lua function in the given entity's lua context</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#loungableOccupied">loungableOccupied(entityId)</a></td>
-	<td class="summary">Determine if a loungable object is occupied by a humanoid (player or NPC)</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#isMonster">isMonster(entityId, isAggressive)</a></td>
-	<td class="summary">Determine if the given entity id is that of a monster entity</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#isNpc">isNpc(entityId, damageTeam)</a></td>
-	<td class="summary">Determine if the given entity id is that of an NPC entity</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#takeItemDrop">takeItemDrop(entityId, takenByEntityId)</a></td>
-	<td class="summary">Mark the given item drop entity as taken</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#lightLevel">lightLevel(position)</a></td>
-	<td class="summary">Gets the amount of light applied to a given position</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#windLevel">windLevel(location)</a></td>
-	<td class="summary">Returns the level of wind at the given location</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#temperature">temperature(location)</a></td>
-	<td class="summary">Returns the temperature at the given location</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#breathable">breathable(location)</a></td>
-	<td class="summary">Returns whether or not the location is breathable</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#underground">underground(position)</a></td>
-	<td class="summary">Determine whether the given position is below the underground level</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#material">material(position, layer)</a></td>
-	<td class="summary">Gets the name of the material at the given tile position</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#mod">mod(position, layer)</a></td>
-	<td class="summary">Gets the tile modification on the tile at the given position</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#damageTiles">damageTiles(positions, layer, sourcePosition, type, amount)</a></td>
-	<td class="summary">Applies damage to the tiles at the given positions</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#placeMaterial">placeMaterial(position, layer, materialName, materialHue, allowOverlap)</a></td>
-	<td class="summary">Places a tile of a specific material at the given location</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#distance">distance(position1, position2)</a></td>
-	<td class="summary">Gets the vector between two positions, accounting for the world wrap.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#magnitude">magnitude(vector1, vector2)</a></td>
-	<td class="summary">Calculates the magnitude of a 2-vector table, or the magnitude of the distance between two 2-vectors.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#isVisibleToPlayer">isVisibleToPlayer(region)</a></td>
-	<td class="summary">Determines if the given region overlaps a player's screen region</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#pointCollision">pointCollision(position, solidOnly)</a></td>
-	<td class="summary">Check if the given position collides with solid and/or platform collision</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#lineCollision">lineCollision(startPoint, endPoint, solidOnly)</a></td>
-	<td class="summary">Check if the given line collides with solid and/or platform collision</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#rectCollision">rectCollision(region, solidOnly)</a></td>
-	<td class="summary">Check if the given rectangle collides with solid and/or platform collision</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#collisionBlocksAlongLine">collisionBlocksAlongLine(startPoint, endPoint, solidOnly, maxSize)</a></td>
-	<td class="summary">Returns all the tile positions along the given line that contain collision</td>
-	</tr>
-	<tr>
 	<td class="name" nowrap><a href="#liquidAt">liquidAt(position)</a></td>
 	<td class="summary">Gets the type and level of liquid at the given position</td>
 	</tr>
@@ -284,6 +130,182 @@
 	<td class="name" nowrap><a href="#debugText">debugText(format, ..., position, color)</a></td>
 	<td class="summary">Render text that can be viewed when /debug is enabled.</td>
 	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#distance">distance(position1, position2)</a></td>
+	<td class="summary">Gets the vector between two positions, accounting for the world wrap.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#magnitude">magnitude(vector1, vector2)</a></td>
+	<td class="summary">Calculates the magnitude of a 2-vector table, or the magnitude of the distance between two 2-vectors.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#pointCollision">pointCollision(position[, solidOnly=true])</a></td>
+	<td class="summary">Check if the given position collides with solid and/or platform collision.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#lineCollision">lineCollision(startPoint, endPoint[, solidOnly=true])</a></td>
+	<td class="summary">Check if the given line collides with solid and/or platform collision.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#rectCollision">rectCollision(region[, solidOnly=true])</a></td>
+	<td class="summary">Check if the given rectangle collides with solid and/or platform collision.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#collisionBlocksAlongLine">collisionBlocksAlongLine(startPoint, endPoint[, solidOnly=true[, maxSize=-1]])</a></td>
+	<td class="summary">Gets all the tile positions along the given line that contain collision.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#gravity">gravity(position)</a></td>
+	<td class="summary">Gets the force due to gravity applied at the given position.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#isVisibleToPlayer">isVisibleToPlayer(region)</a></td>
+	<td class="summary">Determines if the given region overlaps a player's screen region.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#setParticleEmitterActive">setParticleEmitterActive(name, active)</a></td>
+	<td class="summary">Enables or disables a particle emitter.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#burstParticleEmitter">burstParticleEmitter(name)</a></td>
+	<td class="summary">Triggers a one-tick emission of particles.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#entityQuery">entityQuery(center, radius[, options])</a></td>
+	<td class="summary">Finds all entities in the given region.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#monsterQuery">monsterQuery(center, radius[, options])</a></td>
+	<td class="summary">Entity query that only considers monsters.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#npcQuery">npcQuery(center, radius[, options])</a></td>
+	<td class="summary">Entity query that only considers npcs.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#objectQuery">objectQuery(center, radius[, options])</a></td>
+	<td class="summary">Entity query that only considers placed objects.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#itemDropQuery">itemDropQuery(center, radius[, options])</a></td>
+	<td class="summary">Entity query that only considers item drops.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#playerQuery">playerQuery(center, radius[, options])</a></td>
+	<td class="summary">Entity query that only considers players.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loungeableQuery">loungeableQuery(center, radius[, options])</a></td>
+	<td class="summary">Entity query that only considers placed objects.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#entityLineQuery">entityLineQuery(start, end[, options])</a></td>
+	<td class="summary">Entity query that only matches entities intersecting the given line.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#objectLineQuery">objectLineQuery(start, end[, options])</a></td>
+	<td class="summary">Entity query that only matches placed objects intersecting the given line.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#npcLineQuery">npcLineQuery(start, end[, options])</a></td>
+	<td class="summary">Entity query that only matches npcs intersecting the given line.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#entityExists">entityExists(entityId)</a></td>
+	<td class="summary">Determines if an entity still exists in the world.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#entityType">entityType(entityId)</a></td>
+	<td class="summary">Determines the general type of an entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#entityPosition">entityPosition(entityId)</a></td>
+	<td class="summary">Gets the world position of an entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#entityUuid">entityUuid(entityId)</a></td>
+	<td class="summary">Gets a UUID for the given entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#entityHealth">entityHealth(entityId)</a></td>
+	<td class="summary">Gets the current and maximum health of an entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#entitySpecies">entitySpecies(entityId)</a></td>
+	<td class="summary">Gets the species of the entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#entityName">entityName(entityId)</a></td>
+	<td class="summary">Gets the name of the entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#entityIsOnGround">entityIsOnGround(entityId)</a></td>
+	<td class="summary">Gets whether the entity is currently on the ground.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#entityHandItem">entityHandItem(entityId, hand)</a></td>
+	<td class="summary">Gets an item descriptor for the item held in the entity's hand.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#callScriptedEntity">callScriptedEntity(entityId, name[, ...])</a></td>
+	<td class="summary">Calls a lua function in the given entity's lua context.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loungeableOccupied">loungeableOccupied(entityId)</a></td>
+	<td class="summary">Determine if a loungeable object is occupied.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#isMonster">isMonster(entityId[, isAggressive])</a></td>
+	<td class="summary">Determine if the given entity is a monster.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#isNpc">isNpc(entityId[, damageTeam])</a></td>
+	<td class="summary">Determine if the given entity is an NPC.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#takeItemDrop">takeItemDrop(entityId[, takenByEntityId])</a></td>
+	<td class="summary">Mark the given item drop entity as taken.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#lightLevel">lightLevel(position)</a></td>
+	<td class="summary">Gets the amount of light applied to a given position.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#windLevel">windLevel(position)</a></td>
+	<td class="summary">Gets the amount of wind at the given position.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#temperature">temperature(position)</a></td>
+	<td class="summary">Gets the temperature at the given position.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#breathable">breathable(position)</a></td>
+	<td class="summary">Gets whether or not the position is breathable.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#underground">underground(position)</a></td>
+	<td class="summary">Determine whether the given position is below the underground level.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#material">material(position, layer)</a></td>
+	<td class="summary">Gets the name of the material at the given position.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mod">mod(position, layer)</a></td>
+	<td class="summary">Gets the tile modification on the tile at the given position.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#damageTiles">damageTiles(positions, layer, sourcePosition, type, amount)</a></td>
+	<td class="summary">Applies damage to the tiles at the given positions.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#placeMaterial">placeMaterial(position, layer, materialName[, materialHue=nil[, allowOverlap=false]])</a></td>
+	<td class="summary">Places a tile of a specific material at the given location.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#placeMod">placeMod(position, layer, modName[, modHue=nil[, allowOverlap=false]])</a></td>
+	<td class="summary">Places a specific tile modification at the given location.</td>
+	</tr>
 </table>
 
 <br/>
@@ -292,1303 +314,6 @@
 
     <h2><a name="Functions"></a>Functions</h2>
     <dl class="function">
-    <dt>
-    <a name = "entityQuery"></a>
-    <strong>entityQuery(center, radius[, options])</strong>
-    </dt>
-    <dd>
-    Finds all entities in the given region.
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">center</span>
-            <span class="types"><span class="type">{ x, y }</span></span>
-         Center of circular region to find entities in, or min position of a rect if radius param is a position
-        </li>
-        <li><span class="parameter">radius</span>
-            <span class="types"><span class="type">numeric</span> or <span class="type">positon</span></span>
-         If a single numeric value, the radius of the circular region.
- Can also be given a position, in which case the search region will be a rectangle defined by a min/max position.
-        </li>
-        <li><span class="parameter">options</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-
-<p> Additional filtering options table, accepts the following:</p>
-<pre><code>withoutEntityId - an entity id (numeric) that will not be returned, even
-                  if it is found in the search region.
-callScript - The (string) name of a script to call in each considered
-             entity (only entities that support script calls will be
-             returned if this option is given).
-callScriptArgs - Arguments (array) passed to the script named in callScript.
-callScriptResult - Expected result of calling the script function named
-                   in callScript. Only entities that return a matching
-                   result will be returned. Defaults to true.
-inSightOf - an entity id that all returned entities must have line of
-            sight on.
-validTargetOf - an entity id that all returned entities must be valid
-                targets of
-notAnObject - If true, no Object types will be considered. Defaults to
-              false.
-order - The desired ordering of the returned entities, only supports the
-       value "nearest" which will sort the resulting entities by
-       ascending distance from the center of the search region.
-</code></pre>
-
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-        Array of entity ids
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "monsterQuery"></a>
-    <strong>monsterQuery(center, radius, options)</strong>
-    </dt>
-    <dd>
-    Entity query that only considers monsters
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">center</span>
-
-
-
-        </li>
-        <li><span class="parameter">radius</span>
-
-
-
-        </li>
-        <li><span class="parameter">options</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/world.html#entityQuery">entityQuery</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "npcQuery"></a>
-    <strong>npcQuery(center, radius, options)</strong>
-    </dt>
-    <dd>
-    Entity query that only considers npcs
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">center</span>
-
-
-
-        </li>
-        <li><span class="parameter">radius</span>
-
-
-
-        </li>
-        <li><span class="parameter">options</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/world.html#entityQuery">entityQuery</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "objectQuery"></a>
-    <strong>objectQuery(center, radius, options)</strong>
-    </dt>
-    <dd>
-
-<p>Entity query that only considers placeable objects. </p>
-
-<p> Adds the following options to the options argument:</p>
-<pre><code>name = Only objects with this (string) name will be returned.
-</code></pre>
-
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">center</span>
-
-
-
-        </li>
-        <li><span class="parameter">radius</span>
-
-
-
-        </li>
-        <li><span class="parameter">options</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/world.html#entityQuery">entityQuery</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "itemDropQuery"></a>
-    <strong>itemDropQuery(center, radius, options)</strong>
-    </dt>
-    <dd>
-    Entity query that only considers item drops
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">center</span>
-
-
-
-        </li>
-        <li><span class="parameter">radius</span>
-
-
-
-        </li>
-        <li><span class="parameter">options</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/world.html#entityQuery">entityQuery</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "playerQuery"></a>
-    <strong>playerQuery(center, radius, options)</strong>
-    </dt>
-    <dd>
-    Entity query that only considers players
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">center</span>
-
-
-
-        </li>
-        <li><span class="parameter">radius</span>
-
-
-
-        </li>
-        <li><span class="parameter">options</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/world.html#entityQuery">entityQuery</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "loungableQuery"></a>
-    <strong>loungableQuery(center, radius, options)</strong>
-    </dt>
-    <dd>
-
-<p>Entity query that only loungable objects.  (humanoids can sit/lay on them)</p>
-
-<p> Adds the following options to the options argument:</p>
-<pre><code>orientation = Filters results that match the given orientation, valid
-              values are "sit" and "lay"
-</code></pre>
-
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">center</span>
-
-
-
-        </li>
-        <li><span class="parameter">radius</span>
-
-
-
-        </li>
-        <li><span class="parameter">options</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/world.html#entityQuery">entityQuery</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "entityLineQuery"></a>
-    <strong>entityLineQuery(min, max, options)</strong>
-    </dt>
-    <dd>
-    Entity query that only matches entities intersecting the given line.
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">min</span>
-
-
-
-        </li>
-        <li><span class="parameter">max</span>
-
-
-
-        </li>
-        <li><span class="parameter">options</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/world.html#entityQuery">entityQuery</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "objectLineQuery"></a>
-    <strong>objectLineQuery(min, max, options)</strong>
-    </dt>
-    <dd>
-    Entity query that only matches objects intersecting the given line.
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">min</span>
-
-
-
-        </li>
-        <li><span class="parameter">max</span>
-
-
-
-        </li>
-        <li><span class="parameter">options</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/world.html#entityQuery">entityQuery</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "npcLineQuery"></a>
-    <strong>npcLineQuery(min, max, options)</strong>
-    </dt>
-    <dd>
-    Entity query that only matches npcs intersecting the given line.
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">min</span>
-
-
-
-        </li>
-        <li><span class="parameter">max</span>
-
-
-
-        </li>
-        <li><span class="parameter">options</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/world.html#entityQuery">entityQuery</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "entityExists"></a>
-    <strong>entityExists(entityId)</strong>
-    </dt>
-    <dd>
-    Determines if an entity still exists in the world.
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">entityId</span>
-            <span class="types"><span class="type">EntityId</span></span>
-         the entity to check
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><span class="type">bool</span></span>
-        true if the entity exists, false otherwise
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "entityType"></a>
-    <strong>entityType(entityId)</strong>
-    </dt>
-    <dd>
-    Determines the general type of an entity.
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">entityId</span>
-            <span class="types"><span class="type">EntityId</span></span>
-         the entity to check
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><span class="type">nil</span></span>
-        if the entity doesn't exist or is of an unhandled type
-    </ol>
-     <h3>Or</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-<p> entity type, which will be one of:</p>
-<pre><code>"player"
-"monster"
-"object"
-"itemdrop"
-"projectile"
-"plant"
-"plantdrop"
-"effect"
-"npc"
-</code></pre>
-
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "entityPosition"></a>
-    <strong>entityPosition(entityId)</strong>
-    </dt>
-    <dd>
-    Gets the world position of an entity.
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">entityId</span>
-            <span class="types"><span class="type">EntityId</span></span>
-         the entity to get the position of
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><span class="type">nil</span></span>
-        if the entity does not exist
-    </ol>
-     <h3>Or</h3>
-    <ol>
-
-           <span class="types"><span class="type">position</span></span>
-        world position of the entity
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "entityHealth"></a>
-    <strong>entityHealth(entityId)</strong>
-    </dt>
-    <dd>
-    Gets the current and maximum health of an entity.
- Only valid for entities that have health (monsters, npcs, and players)
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">entityId</span>
-            <span class="types"><span class="type">EntityId</span></span>
-         entity to get the health of
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><span class="type">nil</span></span>
-        if the entity does not exist or is not a monster, npc, or player
-    </ol>
-     <h3>Or</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-        of <code>{ health, maxHealth }</code>
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "entitySpecies"></a>
-    <strong>entitySpecies(entityId)</strong>
-    </dt>
-    <dd>
-    Gets the species of the entity
- Only valid for entities that have a notion of humanoid species (npcs and players)
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">entityId</span>
-            <span class="types"><span class="type">EntityId</span></span>
-         entity to get the species of
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><span class="type">nil</span></span>
-        if the entity does not exist or is not an npc or player
-    </ol>
-     <h3>Or</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        species name (e.g. "apex" or "human")
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "entityName"></a>
-    <strong>entityName(entityId)</strong>
-    </dt>
-    <dd>
-    Gets the name of the entity.
-  Note that the meaning of "name" depends on the type of entity
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">entityId</span>
-         entity to get the name of
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-
-<p> string entity name, which will be (based on entity type):</p>
-<pre><code>     Player,NPC,Monster: A name for the specific entity instance, e.g. "John Doe"
-     Object: The objectName value from the object's *.object config file
-     ItemDrop: The itemName value from the item's *.item config file
-</code></pre>
-
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "entityHandItem"></a>
-    <strong>entityHandItem(entityId, hand)</strong>
-    </dt>
-    <dd>
-    Gets an item descriptor for the item held in the entity's hand
- Only valid for entities that can hold items (npcs, players)
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">entityId</span>
-         entity to get hand item of
-        </li>
-        <li><span class="parameter">hand</span>
-         Name of the hand to check, accepts: "primary" or "alt"
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "callScriptedEntity"></a>
-    <strong>callScriptedEntity(entityId, name, ...)</strong>
-    </dt>
-    <dd>
-    Calls a lua function in the given entity's lua context
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">entityId</span>
-         The (int) entity id of the entity to call the function on.
-        </li>
-        <li><span class="parameter">name</span>
-
-<p> The name of the function to call. This does not need to be a</p>
-<pre><code>    global function - i.e. "entity.say" would call the "say" function
-    on the "entity" table (as defined in the target entity's lua
-    context).
-</code></pre>
-
-        </li>
-        <li><span class="parameter">...</span>
-         (optional) Arguments passed to function
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-
-<p>The result of calling the function, or nil if the entity does not</p>
-<pre><code>      exist or does not support lua calls.
-</code></pre>
-
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "loungableOccupied"></a>
-    <strong>loungableOccupied(entityId)</strong>
-    </dt>
-    <dd>
-    Determine if a loungable object is occupied by a humanoid (player or NPC)
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">entityId</span>
-         The (int) entity id of the entity to check.
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-
-<p>nil if the entity does not exist, or is not a loungable object.</p>
-<pre><code>      Otherwise, true if the entity is occupied or fals if it is not.
-</code></pre>
-
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "isMonster"></a>
-    <strong>isMonster(entityId, isAggressive)</strong>
-    </dt>
-    <dd>
-    Determine if the given entity id is that of a monster entity
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">entityId</span>
-         (int) entity id to check
-        </li>
-        <li><span class="parameter">isAggressive</span>
-
-<p> (optional) If given as true, will only return true if</p>
-<pre><code>    the entity is a monster and is marked as aggressive. If false is
-    given, will only return true if the entity is not marked as
-    aggressive.
-</code></pre>
-
-
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-
-<p>True if entity is a monster (and the aggressive flag was omitted,</p>
-<pre><code>      or matches the monster's aggressive flag); otherwise false
-</code></pre>
-
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "isNpc"></a>
-    <strong>isNpc(entityId, damageTeam)</strong>
-    </dt>
-    <dd>
-    Determine if the given entity id is that of an NPC entity
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">entityId</span>
-         the (int) entity ID of the entity to check
-        </li>
-        <li><span class="parameter">damageTeam</span>
-
-<p> (optional) If given, the (int) damageTeam that a</p>
-<pre><code>    NPC entity must have for this function to return true.
-</code></pre>
-
-
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-
-<p>True if entity is an NPC and the damageTeam argument was omitted</p>
-<pre><code>      or matches the NPC's damage team. Otherwise false.
-</code></pre>
-
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "takeItemDrop"></a>
-    <strong>takeItemDrop(entityId, takenByEntityId)</strong>
-    </dt>
-    <dd>
-    Mark the given item drop entity as taken
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">entityId</span>
-         Entity id of an item drop entity.
-        </li>
-        <li><span class="parameter">takenByEntityId</span>
-
-<p> (optional) entity id that is taking the item drop.</p>
-<pre><code>    If given, the item drop will animate towards this entity for a bit.
-</code></pre>
-
-
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-
-<p> The descriptor of the item taken, or nil if the item was already</p>
-<pre><code>      taken, was not an item drop, or could not be taken for some
-      other reason.
-</code></pre>
-
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "lightLevel"></a>
-    <strong>lightLevel(position)</strong>
-    </dt>
-    <dd>
-    Gets the amount of light applied to a given position
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">position</span>
-         { x, y } position to get light level of
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        numerical light level
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "windLevel"></a>
-    <strong>windLevel(location)</strong>
-    </dt>
-    <dd>
-    Returns the level of wind at the given location
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">location</span>
-         {x,y} in world coordinates
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        numerical wind level
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "temperature"></a>
-    <strong>temperature(location)</strong>
-    </dt>
-    <dd>
-    Returns the temperature at the given location
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">location</span>
-         {x,y} in world coordinates
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        numerical temperature level
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "breathable"></a>
-    <strong>breathable(location)</strong>
-    </dt>
-    <dd>
-    Returns whether or not the location is breathable
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">location</span>
-         {x,y} in world coordinates
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        True if you can breathe there, otherwise false.
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "underground"></a>
-    <strong>underground(position)</strong>
-    </dt>
-    <dd>
-    Determine whether the given position is below the underground level
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">position</span>
-         { x, y } location to check
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        True if the given position is below the underground level.
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "material"></a>
-    <strong>material(position, layer)</strong>
-    </dt>
-    <dd>
-    Gets the name of the material at the given tile position
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">position</span>
-         The { x, y } position to check
-        </li>
-        <li><span class="parameter">layer</span>
-         The layer to check: "foreground" or "background"
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-
-<p>The (string) material name, as defined in the materialName value</p>
-<pre><code>      of a *.material file. Or nil if there is no material placed.
-</code></pre>
-
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "mod"></a>
-    <strong>mod(position, layer)</strong>
-    </dt>
-    <dd>
-    Gets the tile modification on the tile at the given position
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">position</span>
-         The { x, y } position to check
-        </li>
-        <li><span class="parameter">layer</span>
-         The layer to check: "foreground" or "background"
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-
-<p>The (string) mod name, as defined in the modName value</p>
-<pre><code>      of a *.matmod file. Or nil if there is no modification placed.
-</code></pre>
-
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "damageTiles"></a>
-    <strong>damageTiles(positions, layer, sourcePosition, type, amount)</strong>
-    </dt>
-    <dd>
-    Applies damage to the tiles at the given positions
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">positions</span>
-         List of { x, y } positions to damage tiles at
-        </li>
-        <li><span class="parameter">layer</span>
-         The tile layer to damage: "foreground" or "background"
-        </li>
-        <li><span class="parameter">sourcePosition</span>
-         The { x, y } position of the cause of the damage
-        </li>
-        <li><span class="parameter">type</span>
-
-<p> The type of damage to apply, allowed values are:</p>
-<pre><code>     "plantish", "blockish", "beamish", "explosive", "fire", "tilling"
-     or "crushing". Note that "crushing" damage will prevent destroyed
-     tiles from dropping a material item.
-</code></pre>
-
-        </li>
-        <li><span class="parameter">amount</span>
-         The amount of damage to apply to each tile
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        true if any tiles were actually damaged, false otherwise
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "placeMaterial"></a>
-    <strong>placeMaterial(position, layer, materialName, materialHue, allowOverlap)</strong>
-    </dt>
-    <dd>
-    Places a tile of a specific material at the given location
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">position</span>
-
-<p> The { x, y } position to place the material at -</p>
-<pre><code>    fractional values will be ignored, placing at a tile position.
-</code></pre>
-
-        </li>
-        <li><span class="parameter">layer</span>
-         The tile layer to place the tile on: "foreground" or "background"
-        </li>
-        <li><span class="parameter">materialName</span>
-
-<p> The name of the material to place, as specified in the</p>
-<pre><code>    materialName value in a *.material file.
-</code></pre>
-
-        </li>
-        <li><span class="parameter">materialHue</span>
-
-<p> (optional) numeric (integer) hue shift to apply to the</p>
-<pre><code>    material, if omitted (or nil), will default to whatever hue matches
-    the biome in which it is placed
-</code></pre>
-
-        </li>
-        <li><span class="parameter">allowOverlap</span>
-
-<p> (optional) If true, allows tiles to be placed even if</p>
-<pre><code>    they overlap entities at the same location (defaults to false)
-</code></pre>
-
-
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        true if the material could be placed, false otherwise
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "distance"></a>
-    <strong>distance(position1, position2)</strong>
-    </dt>
-    <dd>
-    Gets the vector between two positions, accounting for the world wrap.
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">position1</span>
-         {x,y} position in world coordinates
-        </li>
-        <li><span class="parameter">position2</span>
-         {x,y} position in world coordinates
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-
-<p>Vector (position1 - position2) from position2 to position1, which</p>
-<pre><code>      will be correct even when around the world wrap.
-</code></pre>
-
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "magnitude"></a>
-    <strong>magnitude(vector1, vector2)</strong>
-    </dt>
-    <dd>
-    Calculates the magnitude of a 2-vector table, or the magnitude of the distance between two 2-vectors.
- Accounts for world wrapping if two vectors are given
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">vector1</span>
-         Vector or start point of a line segment
-        </li>
-        <li><span class="parameter">vector2</span>
-         If given, the magnitude of (vector1 - vector2) will be calculated
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        Numeric magnitude
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "isVisibleToPlayer"></a>
-    <strong>isVisibleToPlayer(region)</strong>
-    </dt>
-    <dd>
-    Determines if the given region overlaps a player's screen region
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">region</span>
-         { minX, minY, maxX, maxY } region to check
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        true if the region overlaps a player's screen region
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "pointCollision"></a>
-    <strong>pointCollision(position, solidOnly)</strong>
-    </dt>
-    <dd>
-    Check if the given position collides with solid and/or platform collision
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">position</span>
-         The { x, y } position to check
-        </li>
-        <li><span class="parameter">solidOnly</span>
-
-<p> (optional) If true, will only check for solid collision,</p>
-<pre><code>              otherwise will include platform collision. Defaults to
-              true.
-</code></pre>
-
-
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        True if the given position falls inside of a collision region
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "lineCollision"></a>
-    <strong>lineCollision(startPoint, endPoint, solidOnly)</strong>
-    </dt>
-    <dd>
-    Check if the given line collides with solid and/or platform collision
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">startPoint</span>
-         The { x, y } position of the line start point
-        </li>
-        <li><span class="parameter">endPoint</span>
-         The { x, y } position of the line end point
-        </li>
-        <li><span class="parameter">solidOnly</span>
-
-<p> (optional) If true, will only check for solid collision,</p>
-<pre><code>              otherwise will include platform collision. Defaults to
-              true.
-</code></pre>
-
-
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        True if the given line intersects a collision region
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "rectCollision"></a>
-    <strong>rectCollision(region, solidOnly)</strong>
-    </dt>
-    <dd>
-    Check if the given rectangle collides with solid and/or platform collision
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">region</span>
-         { minX, minY, maxX, maxY } region to check
-        </li>
-        <li><span class="parameter">solidOnly</span>
-
-<p> (optional) If true, will only check for solid collision,</p>
-<pre><code>              otherwise will include platform collision. Defaults to
-              false.
-</code></pre>
-
-
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        True if the given rectangle overlaps with a collision region
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "collisionBlocksAlongLine"></a>
-    <strong>collisionBlocksAlongLine(startPoint, endPoint, solidOnly, maxSize)</strong>
-    </dt>
-    <dd>
-    Returns all the tile positions along the given line that contain collision
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">startPoint</span>
-         The { x, y } position of the line start point
-        </li>
-        <li><span class="parameter">endPoint</span>
-         The { x, y } position of the line end point
-        </li>
-        <li><span class="parameter">solidOnly</span>
-
-<p> (optional) If true, will only check for solid collision,</p>
-<pre><code>              otherwise will include platform collision. Defaults to
-              true.
-</code></pre>
-
-        </li>
-        <li><span class="parameter">maxSize</span>
-
-<p> (optional The maximum number of collision positions to</p>
-<pre><code>            return, defaults to no limit (-1).
-</code></pre>
-
-
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-
-<p>A table (array) of {x,y} positions (integral) of the tiles with</p>
-<pre><code>      collision, ordered by (smallest) distance to the start point.
-</code></pre>
-
-    </ol>
-
-
-
-
-</dd>
     <dt>
     <a name = "liquidAt"></a>
     <strong>liquidAt(position)</strong>
@@ -2203,6 +928,1591 @@ order - The desired ordering of the returned entities, only supports the
     <ol>
 
         nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "distance"></a>
+    <strong>distance(position1, position2)</strong>
+    </dt>
+    <dd>
+    Gets the vector between two positions, accounting for the world wrap.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position1</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         {x,y} position in world coordinates
+        </li>
+        <li><span class="parameter">position2</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         {x,y} position in world coordinates
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">vector</span></span>
+         (position1 - position2) from position2 to position1, which
+  will be correct even when around the world wrap.
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "magnitude"></a>
+    <strong>magnitude(vector1, vector2)</strong>
+    </dt>
+    <dd>
+    Calculates the magnitude of a 2-vector table, or the magnitude of the distance between two 2-vectors. </p>
+
+<p>  Accounts for world wrapping if two vectors are given.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">vector1</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         Vector or start point of a line segment
+        </li>
+        <li><span class="parameter">vector2</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         If given, the magnitude of (vector1 - vector2) will be calculated
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">numeric</span></span>
+        magnitude
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "pointCollision"></a>
+    <strong>pointCollision(position[, solidOnly=true])</strong>
+    </dt>
+    <dd>
+    Check if the given position collides with solid and/or platform collision.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         The { x, y } position to check
+        </li>
+        <li><span class="parameter">solidOnly</span>
+            <span class="types"><span class="type">bool</span></span>
+         If true, will only check for solid collision,
+  otherwise will include platform collision.
+         (<em>default</em> true)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        true if the given position falls inside of a collision region
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "lineCollision"></a>
+    <strong>lineCollision(startPoint, endPoint[, solidOnly=true])</strong>
+    </dt>
+    <dd>
+    Check if the given line collides with solid and/or platform collision.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">startPoint</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         The { x, y } position of the line start point
+        </li>
+        <li><span class="parameter">endPoint</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         The { x, y } position of the line end point
+        </li>
+        <li><span class="parameter">solidOnly</span>
+            <span class="types"><span class="type">bool</span></span>
+         If true, will only check for solid collision,
+  otherwise will include platform collision.
+         (<em>default</em> true)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        true if the given line intersects a collision region
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "rectCollision"></a>
+    <strong>rectCollision(region[, solidOnly=true])</strong>
+    </dt>
+    <dd>
+    Check if the given rectangle collides with solid and/or platform collision.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">region</span>
+            <span class="types"><span class="type">{ xMin, yMin, xMax, yMax }</span></span>
+         region to check
+        </li>
+        <li><span class="parameter">solidOnly</span>
+            <span class="types"><span class="type">bool</span></span>
+         If true, will only check for solid collision,
+  otherwise will include platform collision.
+         (<em>default</em> true)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        true if the given rectangle overlaps with a collision region
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "collisionBlocksAlongLine"></a>
+    <strong>collisionBlocksAlongLine(startPoint, endPoint[, solidOnly=true[, maxSize=-1]])</strong>
+    </dt>
+    <dd>
+    Gets all the tile positions along the given line that contain collision.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">startPoint</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         the start of the line
+        </li>
+        <li><span class="parameter">endPoint</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         the end of the line
+        </li>
+        <li><span class="parameter">solidOnly</span>
+            <span class="types"><span class="type">bool</span></span>
+         if true, will only check for solid collision,
+  otherwise will include platform collision.
+         (<em>default</em> true)
+        </li>
+        <li><span class="parameter">maxSize</span>
+            <span class="types"><span class="type">int</span></span>
+         the maximum number of collision positions to return, or
+  -1 for no limit.
+         (<em>default</em> -1)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         A table (array) of {x,y} positions (integral) of the tiles with
+  collision, ordered by (smallest) distance to the start point.
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "gravity"></a>
+    <strong>gravity(position)</strong>
+    </dt>
+    <dd>
+    Gets the force due to gravity applied at the given position.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         world position to get gravity at
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">float</span></span>
+        the gravity at the given position
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "isVisibleToPlayer"></a>
+    <strong>isVisibleToPlayer(region)</strong>
+    </dt>
+    <dd>
+    Determines if the given region overlaps a player's screen region.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">region</span>
+            <span class="types"><span class="type">{ xMin, yMin, xMax, yMax }</span></span>
+         { minX, minY, maxX, maxY } region to check
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        true if the region overlaps a player's screen region
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "setParticleEmitterActive"></a>
+    <strong>setParticleEmitterActive(name, active)</strong>
+    </dt>
+    <dd>
+    Enables or disables a particle emitter. </p>
+
+<p>  The particle emitter should be listed in the <code>particleEmitters</code> section of
+  the entity's *.animation file.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         the name of the particle emitter, matching the key used in the
+  <code>particleEmitters</code> section of the entity's *.animation file.
+        </li>
+        <li><span class="parameter">active</span>
+            <span class="types"><span class="type">bool</span></span>
+         whether the emitter should be enabled (true) or disabled (false)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+         true if the named particle emitter existed in the entity's
+  *.animation file, false otherwise.
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "burstParticleEmitter"></a>
+    <strong>burstParticleEmitter(name)</strong>
+    </dt>
+    <dd>
+    Triggers a one-tick emission of particles. </p>
+
+<p>  The particle emitter should be listed in the <code>particleEmitters</code> section of
+  the entity's *.animation file. The particles will be emitted for a single
+  game tick, without modifying the <code>active</code> state of the emitter.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         the name of the particle emitter, matching the key used in the
+  <code>particleEmitters</code> section of the entity's *.animation file.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+         true if the named particle emitter existed in the entity's
+  *.animation file, false otherwise.
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "entityQuery"></a>
+    <strong>entityQuery(center, radius[, options])</strong>
+    </dt>
+    <dd>
+    Finds all entities in the given region.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">center</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         Center of circular region to find entities in, or min position of a rect if radius param is a position
+        </li>
+        <li><span class="parameter">radius</span>
+            <span class="types"><span class="type">numeric</span> or <span class="type">positon</span></span>
+         If a single numeric value, the radius of the circular region.
+  Can also be given a position, in which case the search region will be a rectangle defined by a min/max position.
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+<p> Additional filtering options table, accepts the following:</p>
+<pre><code> withoutEntityId - an entity id (numeric) that will not be returned, even
+                   if it is found in the search region.
+ callScript - The (string) name of a script to call in each considered
+              entity (only entities that support script calls will be
+              returned if this option is given).
+ callScriptArgs - Arguments (array) passed to the script named in callScript.
+ callScriptResult - Expected result of calling the script function named
+                    in callScript. Only entities that return a matching
+                    result will be returned. Defaults to true.
+ inSightOf - an entity id that all returned entities must have line of
+             sight on.
+ validTargetOf - an entity id that all returned entities must be valid
+                 targets of
+ notAnObject - If true, no Object types will be considered. Defaults to
+               false.
+ order - The desired ordering of the returned entities, only supports the
+        value "nearest" which will sort the resulting entities by
+        ascending distance from the center of the search region.
+</code></pre>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        Array of entity ids
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "monsterQuery"></a>
+    <strong>monsterQuery(center, radius[, options])</strong>
+    </dt>
+    <dd>
+    Entity query that only considers monsters.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">center</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">radius</span>
+            <span class="types"><span class="type">numeric</span> or <span class="type">positon</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/world.html#entityQuery">entityQuery</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "npcQuery"></a>
+    <strong>npcQuery(center, radius[, options])</strong>
+    </dt>
+    <dd>
+    Entity query that only considers npcs.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">center</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">radius</span>
+            <span class="types"><span class="type">numeric</span> or <span class="type">positon</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/world.html#entityQuery">entityQuery</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "objectQuery"></a>
+    <strong>objectQuery(center, radius[, options])</strong>
+    </dt>
+    <dd>
+
+<p>Entity query that only considers placed objects. </p>
+
+<p>  Adds the following options to the options argument:</p>
+<pre><code>name = &lt;only objects with this (string) name will be returned&gt;
+</code></pre>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">center</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">radius</span>
+            <span class="types"><span class="type">numeric</span> or <span class="type">positon</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/world.html#entityQuery">entityQuery</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "itemDropQuery"></a>
+    <strong>itemDropQuery(center, radius[, options])</strong>
+    </dt>
+    <dd>
+    Entity query that only considers item drops.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">center</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">radius</span>
+            <span class="types"><span class="type">numeric</span> or <span class="type">positon</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/world.html#entityQuery">entityQuery</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "playerQuery"></a>
+    <strong>playerQuery(center, radius[, options])</strong>
+    </dt>
+    <dd>
+    Entity query that only considers players.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">center</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">radius</span>
+            <span class="types"><span class="type">numeric</span> or <span class="type">positon</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/world.html#entityQuery">entityQuery</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "loungeableQuery"></a>
+    <strong>loungeableQuery(center, radius[, options])</strong>
+    </dt>
+    <dd>
+
+<p>Entity query that only considers placed objects. </p>
+
+<p>  Adds the following options to the options argument:
+   orientation = Filters results that match the given orientation, valid</p>
+<pre><code>             values are "sit" and "lay"
+</code></pre>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">center</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">radius</span>
+            <span class="types"><span class="type">numeric</span> or <span class="type">positon</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/world.html#entityQuery">entityQuery</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "entityLineQuery"></a>
+    <strong>entityLineQuery(start, end[, options])</strong>
+    </dt>
+    <dd>
+    Entity query that only matches entities intersecting the given line.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">start</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">end</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/world.html#entityQuery">entityQuery</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "objectLineQuery"></a>
+    <strong>objectLineQuery(start, end[, options])</strong>
+    </dt>
+    <dd>
+    Entity query that only matches placed objects intersecting the given line.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">start</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">end</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/world.html#entityQuery">entityQuery</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "npcLineQuery"></a>
+    <strong>npcLineQuery(start, end[, options])</strong>
+    </dt>
+    <dd>
+    Entity query that only matches npcs intersecting the given line.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">start</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">end</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/world.html#entityQuery">entityQuery</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "entityExists"></a>
+    <strong>entityExists(entityId)</strong>
+    </dt>
+    <dd>
+    Determines if an entity still exists in the world.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         the entity to check
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        true if the entity exists, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "entityType"></a>
+    <strong>entityType(entityId)</strong>
+    </dt>
+    <dd>
+    Determines the general type of an entity.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         the entity to check
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the entity doesn't exist or is of an unhandled type
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         entity type, which will be one of:</p>
+<pre><code> "player"
+ "monster"
+ "object"
+ "itemdrop"
+ "projectile"
+ "plant"
+ "plantdrop"
+ "effect"
+ "npc"
+</code></pre>
+<p>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "entityPosition"></a>
+    <strong>entityPosition(entityId)</strong>
+    </dt>
+    <dd>
+    Gets the world position of an entity.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         the entity to get the position of
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the entity does not exist
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><span class="type">position</span></span>
+        world position of the entity
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "entityUuid"></a>
+    <strong>entityUuid(entityId)</strong>
+    </dt>
+    <dd>
+    Gets a UUID for the given entity. </p>
+
+<p>  Only valid for player entities. The UUID will remain the same even if the
+  player's entity id changes.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         the entity to get the uuid of
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the entity doesn't exist, or is not a player
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        hexadecimal UUID string (without leading '0x')
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "entityHealth"></a>
+    <strong>entityHealth(entityId)</strong>
+    </dt>
+    <dd>
+    Gets the current and maximum health of an entity.
+  Only valid for entities that have health (monsters, npcs, and players)
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         entity to get the health of
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the entity does not exist or is not a monster, npc, or player
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        of <code>{ health, maxHealth }</code>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "entitySpecies"></a>
+    <strong>entitySpecies(entityId)</strong>
+    </dt>
+    <dd>
+    Gets the species of the entity. </p>
+
+<p>  Only valid for entities that have a notion of humanoid species (npcs and players)
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         entity to get the species of
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the entity does not exist or is not an npc or player
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        species name (e.g. "apex" or "human")
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "entityName"></a>
+    <strong>entityName(entityId)</strong>
+    </dt>
+    <dd>
+
+<p>Gets the name of the entity. </p>
+
+<p>  The meaning of "name" depends on the type of entity:</p>
+<pre><code>Player,NPC,Monster: A name for the specific entity instance, e.g. "John Doe"
+Object: The objectName value from the object's *.object config file
+ItemDrop: The itemName value from the item's *.item config file
+</code></pre>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         entity to get the name of
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the entity doesnt exist or is not of a supported type.
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        entity name
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "entityIsOnGround"></a>
+    <strong>entityIsOnGround(entityId)</strong>
+    </dt>
+    <dd>
+    Gets whether the entity is currently on the ground. </p>
+
+<p>  Only valid for: monsters, npcs, and players.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         entity to get the onGround status of
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the entity doesnt exist or is not of a supported type.
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        true if the entity is on the ground, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "entityHandItem"></a>
+    <strong>entityHandItem(entityId, hand)</strong>
+    </dt>
+    <dd>
+    Gets an item descriptor for the item held in the entity's hand. </p>
+
+<p>  Only valid for entities that can hold items (npcs and players)
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         entity to get hand item of
+        </li>
+        <li><span class="parameter">hand</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Name of the hand to check, accepts: "primary" or "alt"
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the entity doesn't exist or is not a player or NPC, or there is no item in the specified hand
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        the name of the held item, as specified in an <code>itemName</code> value of a *.item config file
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "callScriptedEntity"></a>
+    <strong>callScriptedEntity(entityId, name[, ...])</strong>
+    </dt>
+    <dd>
+    Calls a lua function in the given entity's lua context.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         The entity to call the function on. Must be an entity that
+  can run scripts - e.g. a monster, npc, or (wire) object.
+        </li>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The name of the function to call. This does not need to be a
+  global function - e.g. <code>entity.say</code> would call the "say" function on the
+  <a href="../modules/entity.html#">entity</a>  table (as defined in the target entity's lua context).
+        </li>
+        <li><span class="parameter">...</span>
+         Arguments passed to function
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the entity does not exist, is not a scripted entity, or
+   this function is being called from a tech script.
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+        The result of calling the function.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loungeableOccupied"></a>
+    <strong>loungeableOccupied(entityId)</strong>
+    </dt>
+    <dd>
+    Determine if a loungeable object is occupied. </p>
+
+<p>  Note that loungeables may only be occupied by a humanoid (player or NPC).
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         the loungeable entity to check.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the entity does not exist or is not a loungeable object
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        true if the entity is occupied or false if it is not
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "isMonster"></a>
+    <strong>isMonster(entityId[, isAggressive])</strong>
+    </dt>
+    <dd>
+    Determine if the given entity is a monster.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         the entity to check
+        </li>
+        <li><span class="parameter">isAggressive</span>
+            <span class="types"><span class="type">bool</span></span>
+         If given as true, will only return true if
+  the entity is a monster and is marked as aggressive. If false is
+  given, will only return true if the entity is not marked as
+  aggressive.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+         true if entity is a monster (and the aggressive flag was
+  omitted, or matches the monster's aggressive flag); otherwise false
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "isNpc"></a>
+    <strong>isNpc(entityId[, damageTeam])</strong>
+    </dt>
+    <dd>
+    Determine if the given entity is an NPC.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         the (int) entity ID of the entity to check
+        </li>
+        <li><span class="parameter">damageTeam</span>
+            <span class="types"><span class="type">int</span></span>
+         if given, the (int) damageTeam that a NPC entity must
+  have for this function to return true.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+         true if entity is an NPC and the damageTeam argument was
+  omitted or matches the NPC's damage team. Otherwise false.
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "takeItemDrop"></a>
+    <strong>takeItemDrop(entityId[, takenByEntityId])</strong>
+    </dt>
+    <dd>
+    Mark the given item drop entity as taken.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         the item drop entity to take
+        </li>
+        <li><span class="parameter">takenByEntityId</span>
+            <span class="types"><span class="type">EntityId</span></span>
+         the entity that is taking the item drop.
+  If given, the item drop will animate towards this entity for a bit.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the item was already taken, was not an item drop, or could
+  not be taken for some other reason.
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        descriptor of the item taken.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "lightLevel"></a>
+    <strong>lightLevel(position)</strong>
+    </dt>
+    <dd>
+    Gets the amount of light applied to a given position.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         the position to get the light level at
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        light level at the given position
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "windLevel"></a>
+    <strong>windLevel(position)</strong>
+    </dt>
+    <dd>
+    Gets the amount of wind at the given position.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         the position to get the wind level at
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        wind level at the given position
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "temperature"></a>
+    <strong>temperature(position)</strong>
+    </dt>
+    <dd>
+    Gets the temperature at the given position.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         the position to get the temperature at
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        temperature at the given position
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "breathable"></a>
+    <strong>breathable(position)</strong>
+    </dt>
+    <dd>
+    Gets whether or not the position is breathable.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         the position to check the breathability of
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        true if the position is breathable, otherwise false.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "underground"></a>
+    <strong>underground(position)</strong>
+    </dt>
+    <dd>
+    Determine whether the given position is below the underground level.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         the position to check
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        true if the given position is below the underground level.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "material"></a>
+    <strong>material(position, layer)</strong>
+    </dt>
+    <dd>
+    Gets the name of the material at the given position.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         the position to check
+        </li>
+        <li><span class="parameter">layer</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The layer to check: "foreground" or "background"
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if there is no material placed at the given position and layer.
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         the material name, as defined in the <code>materialName</code> value
+  of a *.material file.
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "mod"></a>
+    <strong>mod(position, layer)</strong>
+    </dt>
+    <dd>
+    Gets the tile modification on the tile at the given position.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         the position to check
+        </li>
+        <li><span class="parameter">layer</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         the layer to check: "foreground" or "background"
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if there is no tile modification placed at the given position and layer.
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         the tile mod name, as defined in the <code>modName</code> value
+  of a *.matmod file.
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "damageTiles"></a>
+    <strong>damageTiles(positions, layer, sourcePosition, type, amount)</strong>
+    </dt>
+    <dd>
+    Applies damage to the tiles at the given positions.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">positions</span>
+         List of { x, y } positions to damage tiles at
+        </li>
+        <li><span class="parameter">layer</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The tile layer to damage: "foreground" or "background"
+        </li>
+        <li><span class="parameter">sourcePosition</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         The position of the cause of the damage
+        </li>
+        <li><span class="parameter">type</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The type of damage to apply, allowed values are:
+  "plantish", "blockish", "beamish", "explosive", "fire", "tilling"
+  or "crushing". Note that "crushing" damage will prevent destroyed
+  tiles from dropping a material item.
+        </li>
+        <li><span class="parameter">amount</span>
+            <span class="types"><span class="type">number</span></span>
+         The amount of damage to apply to each tile
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        true if any tiles were actually damaged, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "placeMaterial"></a>
+    <strong>placeMaterial(position, layer, materialName[, materialHue=nil[, allowOverlap=false]])</strong>
+    </dt>
+    <dd>
+    Places a tile of a specific material at the given location.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         The position to place the material at - fractional values
+  will be ignored, placing at a tile position.
+        </li>
+        <li><span class="parameter">layer</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The tile layer to place the tile on: "foreground" or "background"
+        </li>
+        <li><span class="parameter">materialName</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The name of the material to place, as specified in the
+  <code>materialName</code> value in a *.material file.
+        </li>
+        <li><span class="parameter">materialHue</span>
+            <span class="types"><span class="type">number</span></span>
+         hue shift to apply to the material, if omitted
+  (or nil), will default to whatever hue matches the biome in which it is placed
+         (<em>default</em> nil)
+        </li>
+        <li><span class="parameter">allowOverlap</span>
+            <span class="types"><span class="type">bool</span></span>
+         If true, allows tiles to be placed even if they
+  overlap entities at the same location.
+         (<em>default</em> false)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        true if the material could be placed, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "placeMod"></a>
+    <strong>placeMod(position, layer, modName[, modHue=nil[, allowOverlap=false]])</strong>
+    </dt>
+    <dd>
+    Places a specific tile modification at the given location.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         The position to place the mod at - fractional values
+  will be ignored, placing at a tile position.
+        </li>
+        <li><span class="parameter">layer</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The tile layer to place the mod on: "foreground" or "background"
+        </li>
+        <li><span class="parameter">modName</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         the tile mod name, as defined in the <code>modName</code> value
+  of a *.matmod file.
+        </li>
+        <li><span class="parameter">modHue</span>
+            <span class="types"><span class="type">number</span></span>
+         hue shift to apply to the mod, if omitted
+  (or nil), will default to whatever hue matches the biome in which it is placed
+         (<em>default</em> nil)
+        </li>
+        <li><span class="parameter">allowOverlap</span>
+            <span class="types"><span class="type">bool</span></span>
+         If true, allows tiles to be placed even if they
+  overlap entities at the same location.
+         (<em>default</em> false)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        true if the material could be placed, false otherwise
     </ol>
 
 

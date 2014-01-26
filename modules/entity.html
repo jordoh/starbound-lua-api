@@ -51,37 +51,35 @@
 
 <h1>Module <code>entity</code></h1>
 
-<p>Stubs for entity.* callbacks defined in C++.</p>
-<p> DO NOT INCLUDE this file in your scripts, it is for documentation purposes only.</p>
-
-<p> Entity callbacks query and mutate the specific entity that is running the
- lua script. They can be called from a <em>different</em> entity using
- world.callScriptedEntity(targetEntityId, "entity.<em>"), replacing "</em>" with the
- name of a function defined below.</p>
+<p>Entity callbacks query and mutate the specific entity that is running the
+ lua script they are called from.</p>
+<p> These functions can be called from a <em>different</em> entity by calling
+ <code><a href="../modules/world.html#callScriptedEntity">world.callScriptedEntity</a>(targetEntityId, "entity.*")</code>, replacing the <code>*</code>
+ with the name of a function defined here.</p>
 
 <p> Specific types of entities (e.g. NPCs, Objects) define different sets of
- entity.* functions - if a function is only defined for a specific entity
- type, it will be indicated in the function's comment below.</p>
+ <code>entity.*</code> functions - if a function is only defined for a specific entity
+ type, it will be indicated in the function's comment. Otherwise it should
+ be assumed that the function is available to all scripted entity types.</p>
 
 
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#id">id()</a></td>
-	<td class="summary">Gets a numeric id that can be used to identify this specific entity until
- it is unloaded</td>
+	<td class="summary">Gets a numeric id that can be used to identify this specific entity.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#position">position()</a></td>
-	<td class="summary">Gets the entity's current world position</td>
+	<td class="summary">Gets the entity's current world position.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#damageTeam">damageTeam()</a></td>
-	<td class="summary">Gets the entity's damage team</td>
+	<td class="summary">Gets the entity's damage team.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#closestValidTarget">closestValidTarget(radius)</a></td>
-	<td class="summary">Gets the entity id of the closest valid target entity</td>
+	<td class="summary">Gets the entity id of the closest valid target entity.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#isValidTarget">isValidTarget(entityId)</a></td>
@@ -89,11 +87,35 @@
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#distanceToEntity">distanceToEntity(entityId)</a></td>
-	<td class="summary">Gets the vector from this entity's position to the given entity's position</td>
+	<td class="summary">Gets the vector from this entity's position to the given entity's position.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#entityInSight">entityInSight(entityId)</a></td>
-	<td class="summary">Determines if the given entity is in sight to this entity</td>
+	<td class="summary">Determines if the given entity is in sight to this entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#health">health()</a></td>
+	<td class="summary">Gets the current health of this entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#maxHealth">maxHealth()</a></td>
+	<td class="summary">Gets the maximum health of this entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#configParameter">configParameter(name[, default])</a></td>
+	<td class="summary">Gets the value of a configuration option for this entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#randomizeParameter">randomizeParameter(name[, default])</a></td>
+	<td class="summary">Gets a random value from a list in the entity's configuration.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#staticRandomizeParameter">staticRandomizeParameter(name[, default])</a></td>
+	<td class="summary">Gets a stable random value from a list in the entity's configuration.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#randomizeParameterRange">randomizeParameterRange(name[, default])</a></td>
+	<td class="summary">Gets a random value between two numbers specified in the entity's configuration.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#type">type()</a></td>
@@ -101,11 +123,39 @@
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#seed">seed()</a></td>
-	<td class="summary">Gets the seed used to generate the entity.</td>
+	<td class="summary">Gets the seed used to generate this entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#uniqueParameters">uniqueParameters()</a></td>
+	<td class="summary">Gets any unique configuration used to spawn this entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#familyIndex">familyIndex()</a></td>
+	<td class="summary">Gets an index specifying which variant within a family this entity is.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#level">level()</a></td>
+	<td class="summary">Gets the level of this entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dt">dt()</a></td>
+	<td class="summary">Get the elapsed time (in seconds) between calls to <code>main</code>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#setDeathParticleBurst">setDeathParticleBurst(kind)</a></td>
+	<td class="summary">Sets the particle effect that will be played when the entity dies.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#setDeathSound">setDeathSound(sound)</a></td>
+	<td class="summary">Sets the sound effect that will be played when the entity dies.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#setForceRegion">setForceRegion(region, force)</a></td>
-	<td class="summary">Allows the entity to apply a global force to all entities in a region.</td>
+	<td class="summary">Applies a force to all entities in the given region.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#applyForce">applyForce(force)</a></td>
+	<td class="summary">Applies an instantaneous force to the entity.</td>
 	</tr>
 </table>
 
@@ -120,8 +170,10 @@
     <strong>id()</strong>
     </dt>
     <dd>
-    Gets a numeric id that can be used to identify this specific entity until
- it is unloaded
+    Gets a numeric id that can be used to identify this specific entity. </p>
+
+<p>  This id will be valid until the entity is unloaded. If you need a stable
+  identifier, see <a href="../modules/world.html#entityUuid">world.entityUuid</a>.
 
 
     <h3>Returns:</h3>
@@ -140,7 +192,7 @@
     <strong>position()</strong>
     </dt>
     <dd>
-    Gets the entity's current world position
+    Gets the entity's current world position.
 
 
     <h3>Returns:</h3>
@@ -159,7 +211,9 @@
     <strong>damageTeam()</strong>
     </dt>
     <dd>
-    Gets the entity's damage team  Damage teams control which other entities can be damaged by this entity.
+    Gets the entity's damage team. </p>
+
+<p>  Damage teams control which other entities can be damaged by this entity.
 
 
     <h3>Returns:</h3>
@@ -178,9 +232,11 @@
     <strong>closestValidTarget(radius)</strong>
     </dt>
     <dd>
-    Gets the entity id of the closest valid target entity  Note that "valid target entities" are defined as entities that can be
- damaged (based on damage teams); and are players, NPCs, or aggressive
- monsters.
+    Gets the entity id of the closest valid target entity. </p>
+
+<p>  Note that "valid target entities" are defined as entities that can be
+  damaged (based on damage teams); and are players, NPCs, or aggressive
+  monsters.
 
     <h3>Parameters:</h3>
     <ul>
@@ -214,9 +270,9 @@
     <dd>
     Determines whether the given entity is a valid target of this entity. </p>
 
-<p> Note that "valid target entities" are defined as entities that can be
- damaged (based on damage teams); and are players, NPCs, or aggressive
- monsters
+<p>  Note that "valid target entities" are defined as entities that can be
+  damaged (based on damage teams); and are players, NPCs, or aggressive
+  monsters
 
     <h3>Parameters:</h3>
     <ul>
@@ -242,7 +298,9 @@
     <strong>distanceToEntity(entityId)</strong>
     </dt>
     <dd>
-    Gets the vector from this entity's position to the given entity's position
+    Gets the vector from this entity's position to the given entity's position. </p>
+
+<p>  Damage teams control which other entities can be damaged by this entity.
 
     <h3>Parameters:</h3>
     <ul>
@@ -274,8 +332,10 @@
     <strong>entityInSight(entityId)</strong>
     </dt>
     <dd>
-    Determines if the given entity is in sight to this entity  Note that "in sight" is defined as not having solid collision
- intersecting the line between the entities' positions
+    Determines if the given entity is in sight to this entity. </p>
+
+<p>  Note that "in sight" is defined as not having solid collision
+  intersecting the line between the entities' positions
 
     <h3>Parameters:</h3>
     <ul>
@@ -297,21 +357,226 @@
 
 </dd>
     <dt>
+    <a name = "health"></a>
+    <strong>health()</strong>
+    </dt>
+    <dd>
+    Gets the current health of this entity. </p>
+
+<p>  Available to: monsters, npcs.
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">double</span></span>
+        current health value
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "maxHealth"></a>
+    <strong>maxHealth()</strong>
+    </dt>
+    <dd>
+    Gets the maximum health of this entity. </p>
+
+<p>  Available to: monsters, npcs.
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">double</span></span>
+        maximum possible health value
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "configParameter"></a>
+    <strong>configParameter(name[, default])</strong>
+    </dt>
+    <dd>
+    Gets the value of a configuration option for this entity. </p>
+
+<p>  Available to: monsters, npcs, objects.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         the name of the configuration value to get, as specified in the
+  entity's configuration (e.g. *.monstertype for monsters)
+        </li>
+        <li><span class="parameter">default</span>
+         a default value that will be returned if the given
+  configuration key does not exist in the entity's configuration.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the entity has no configuration option with the given name,
+  and no default value is given.
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+        the value of the configuration option, or the given default value.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "randomizeParameter"></a>
+    <strong>randomizeParameter(name[, default])</strong>
+    </dt>
+    <dd>
+    Gets a random value from a list in the entity's configuration. </p>
+
+<p>  Available to: monsters, npcs, objects.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         the name of the configuration value to get, as specified in the
+  entity's configuration file (e.g. *.monstertype for monsters)
+        </li>
+        <li><span class="parameter">default</span>
+         a default list to pick a value from, if the configuration
+  option is not found for this entity.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the entity has no configuration option with the given name,
+  and no default list is given, or if the selected list is empty.
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+        a randomly selected value from the configuration option list
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "staticRandomizeParameter"></a>
+    <strong>staticRandomizeParameter(name[, default])</strong>
+    </dt>
+    <dd>
+    Gets a stable random value from a list in the entity's configuration. </p>
+
+<p>  Unlike <a href="../modules/entity.html#randomizeParameter">randomizeParameter</a>, the returned value will always be the same when
+  called from the same entity (or another entity with the same seed).</p>
+
+<p>  Available to: monsters, npcs, objects.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         the name of the configuration value to get, as specified in the
+  entity's configuration file (e.g. *.monstertype for monsters)
+        </li>
+        <li><span class="parameter">default</span>
+         a default list to pick a value from if the configuration
+  option is not found for this entity.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the entity has no configuration option with the given name,
+  and no default list is given, or if the selected list is empty.
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+        a randomly selected value from the configuration option list
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "randomizeParameterRange"></a>
+    <strong>randomizeParameterRange(name[, default])</strong>
+    </dt>
+    <dd>
+    Gets a random value between two numbers specified in the entity's configuration. </p>
+
+<p>  Range endpoints are inclusive. Ranges should be specified in configuration
+  files as two-component arrays, e.g. <code>[1.2, 3.4]</code></p>
+
+<p>  Available to: monsters, npcs, objects.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         the name of the configuration value to get, as specified in the
+  entity's configuration file (e.g. *.monstertype for monsters)
+        </li>
+        <li><span class="parameter">default</span>
+         a default range to pick a value from if the configuration
+  option is not found for this entity.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if the entity has no configuration option with the given name,
+  and no default list is given, or if the selected list is empty.
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+        a randomly selected value from the configuration option list
+    </ol>
+
+
+
+
+</dd>
+    <dt>
     <a name = "type"></a>
     <strong>type()</strong>
     </dt>
     <dd>
     Gets the type of the entity as specified in the entity's config file. </p>
 
-<p> Only available for monsters, where this is the "type" value from the
- *.monstertype
+<p>  Available to: monsters</p>
+
+<p>  For monsters, this is the <a href="../modules/entity.html#type">type</a>  value from the *.monstertype config file.
 
 
     <h3>Returns:</h3>
     <ol>
 
            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        type value
+        <a href="../modules/entity.html#type">type</a>  value
     </ol>
 
 
@@ -323,21 +588,185 @@
     <strong>seed()</strong>
     </dt>
     <dd>
-    Gets the seed used to generate the entity. </p>
+    Gets the seed used to generate this entity. </p>
 
-<p> Only available for monsters and npcs.
- Note that entities can be spawned in custom ways that include additional
- configuration options not described by this seed. E.g. by calling
- world.spawnMonster and passing in configuration options, in which case
- the seed alone will not be sufficient to reconstruct that monster.
+<p>  Available to: monsters, npcs</p>
+
+<p>  Note that entities can be spawned in custom ways that include additional
+  configuration options not described by this seed. E.g. by calling
+  world.spawnMonster and passing in configuration options, in which case
+  the seed alone will not be sufficient to reconstruct that monster.
 
 
     <h3>Returns:</h3>
     <ol>
 
            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The unsigned 64-bit seed, encoded as a decimal string
- (Lua's numeric type - double - is not large enough to hold all seed values).
+         The unsigned 64-bit seed, encoded as a decimal string
+  (Lua's numeric type - double - is not large enough to hold all seed values).
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "uniqueParameters"></a>
+    <strong>uniqueParameters()</strong>
+    </dt>
+    <dd>
+    Gets any unique configuration used to spawn this entity. </p>
+
+<p>  Available to: monsters</p>
+
+<p>  In addition to the seed, unique configuration parameters can be specified for
+  an instance of an entity when it is spawned, making the seed alone not always
+  enough information to re-spawn the exact same entity.
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        if no unique parameters were given when spawning this entity
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        map of any unique paramaters given when spawning this entity
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "familyIndex"></a>
+    <strong>familyIndex()</strong>
+    </dt>
+    <dd>
+    Gets an index specifying which variant within a family this entity is. </p>
+
+<p>  Available to: monsters</p>
+
+<p>  For monsters, a seed and set of unique parameters are used to generate a
+  "family" of many similar entities, one of which will be used to create a
+  single, specific, instance of the monster. The familyIndex is the 0-based
+  index in that set of family members, which was used to generate this monster.
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">int</span></span>
+        family index
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "level"></a>
+    <strong>level()</strong>
+    </dt>
+    <dd>
+    Gets the level of this entity. </p>
+
+<p>  Available to: monsters, npcs
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">double</span></span>
+        the entity's level
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dt"></a>
+    <strong>dt()</strong>
+    </dt>
+    <dd>
+    Get the elapsed time (in seconds) between calls to <code>main</code>. </p>
+
+<p>  Available to: monsters, objects, npcs
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        the number of seconds between calls to <code>main</code>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "setDeathParticleBurst"></a>
+    <strong>setDeathParticleBurst(kind)</strong>
+    </dt>
+    <dd>
+    Sets the particle effect that will be played when the entity dies. </p>
+
+<p>  Available to: monsters
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">kind</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">nil</span></span>
+         a <code>kind</code> value from a *.particle file, or nil to prevent a
+  particle effect from being played when the entity dies.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "setDeathSound"></a>
+    <strong>setDeathSound(sound)</strong>
+    </dt>
+    <dd>
+    Sets the sound effect that will be played when the entity dies. </p>
+
+<p>  Available to: monsters
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">sound</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">nil</span></span>
+         the full asset path of a sound effect to play
+  when the entity dies, e.g. "/sfx/projectiles/bubble_pop.wav". Or nil to
+  prevent any sound from being played when the entity dies.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+
+
+
     </ol>
 
 
@@ -349,30 +778,63 @@
     <strong>setForceRegion(region, force)</strong>
     </dt>
     <dd>
-    Allows the entity to apply a global force to all entities in a region. </p>
+    Applies a force to all entities in the given region. </p>
 
-<p> Only available to monsters and objects. Note that this force will be
- applied until the next call to <code>main</code>, regardless of what scriptDelta is
- set to for the calling entity. The force will be cleared if setForceRegion
- is not called during main(). The force will be removed if the calling
- entity is removed before the next call to <code>main</code>.
+<p>  Only applies to entities capable of movement. Force will be applied until the
+  next call to <code>main</code>.</p>
+
+<p>  Available to: monsters, objects
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">region</span>
             <span class="types"><span class="type">{ xMin, yMin, xMax, yMax }</span></span>
-         the region in which the force will be applied.
+         the region to apply a force in. Force will be applied to any
+  entity with a collision region intersecting this region.
         </li>
         <li><span class="parameter">force</span>
             <span class="types"><span class="type">{ x, y }</span></span>
-         the force to apply to entities in the region.
+         the force that will be applied to entities in the region.
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
-        nil
+           <span class="types"><span class="type">nil</span></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "applyForce"></a>
+    <strong>applyForce(force)</strong>
+    </dt>
+    <dd>
+    Applies an instantaneous force to the entity. </p>
+
+<p>  Available to: monsters
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">force</span>
+            <span class="types"><span class="type">{ x, y }</span></span>
+         the force that will be applied to the entity.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+
+
+
     </ol>
 
 
